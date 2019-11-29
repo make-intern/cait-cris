@@ -4,3 +4,23 @@
     padding: 0 24px;
     width: 100%;
 }
+
+.o-container--report {
+    padding: 0;
+    position: relative;
+    height: 100vh;
+
+    figure {
+        margin: 0;
+        max-width: 100%;
+        height: 100%;
+        
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            padding: 0;        
+        }
+    }
+}
+
