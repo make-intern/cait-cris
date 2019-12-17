@@ -21,7 +21,7 @@ export class search{
             this.setState("add");
         }
     }
-
+    
     setState(action){
         if(action === "add"){
             this.mainNav.classList.remove('is-active');

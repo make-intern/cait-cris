@@ -434,11 +434,17 @@ var search = function () {
     }, {
         key: 'checkState',
         value: function checkState(element) {
-            if (element.classList.contains('is-active')) {
+            if (element.datset.target) {
                 this.setState("remove");
             } else {
                 this.setState("add");
             }
+        }
+    }, {
+        key: 'gettarget',
+        value: function gettarget(element) {
+            var elmenttarget = element.datset.target;
+            this.checkState(elmenttarget);
         }
     }, {
         key: 'setState',
@@ -4250,41 +4256,50 @@ var searchresults = function () {
             this.propertyButton = document.getElementById('p-link');
             this.articleButton = document.getElementById('a-link');
         }
+    }, {
+        key: "getTarget",
+        value: function getTarget(element) {
+            var target = element.dataset.target;
+            this.setActiveTarget(target);
+        }
+    }, {
+        key: "setActiveTarget",
+        value: function setActiveTarget(state) {
+            if (state === "property") {
+                this.propertyResults.classList.add('is-active');
+                this.articleResults.classList.remove("is-active");
+                this.propertyButton.classList.add('is-active-tab');
+                this.articleButton.classList.remove('is-active-tab');
+            } else {
+                this.propertyResults.classList.remove('is-active');
+                this.articleResults.classList.add("is-active");
+                this.propertyButton.classList.remove('is-active-tab');
+                this.articleButton.classList.add('is-active-tab');
+            }
+        }
+    }, {
+        key: "bindElements",
+        value: function bindElements() {
+            var _this = this;
+
+            this.propertyButton.addEventListener('click', function () {
+                _this.getTarget(_this.propertyButton);
+            });
+
+            this.articleButton.addEventListener('click', function () {
+                _this.getTarget(_this.articleButton);
+            });
+        }
+    }, {
+        key: "init",
+        value: function init() {
+            this.getElements();
+            this.bindElements();
+        }
     }]);
 
     return searchresults;
 }();
-
-/*document.addEventListener("DOMContentLoaded", function(){
-    const propertyResults = document.getElementById("p-results");
-    const articleResults = document.getElementById("a-results");
-    const propertyButton = document.getElementById('p-link');
-    const articleButton = document.getElementById('a-link');
-
-        function setActiveState(targetElement) {
-            if(targetElement == 'property') {
-                propertyResults.classList.add('is-active');
-                articleResults.classList.remove("is-active");
-                propertyButton.classList.add('is-active-tab');
-                articleButton.classList.remove('is-active-tab');
-            } else {
-                propertyResults.classList.remove('is-active');
-                articleResults.classList.add("is-active");
-                propertyButton.classList.remove('is-active-tab');
-                articleButton.classList.add('is-active-tab');
-            }
-        }
- 
-            propertyButton.addEventListener('click', function() { 
-                let target = propertyButton.dataset.target;     
-                setActiveState(target);
-            });
-
-            articleButton.addEventListener('click', function() {
-                setActiveState();
-            });
-
-});*/
 
 /***/ }),
 /* 53 */
