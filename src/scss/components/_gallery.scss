@@ -1,0 +1,35 @@
+//CAIT - gallery component
+.c-gallery {
+    &__col {
+         &:nth-child(odd) {
+             width: 100%;
+ 
+             .c-card {
+                 @include maxpoint($desktop) {
+                     max-width: 240px;
+                     align-self: flex-end;
+ 
+                     &:nth-child(even) {
+                         height: 300px;
+                     }
+                 }
+             }
+         }
+ 
+         &:nth-child(even) {
+             width: 100%;
+             margin-bottom: 0;
+
+             .c-card {
+                 @include maxpoint($desktop) {
+                     max-width: 240px;
+                     align-self: flex-start;
+ 
+                     &:nth-child(odd){
+                         height: 300px;
+                     }
+                 }
+             }
+         }
+     }
+ } 

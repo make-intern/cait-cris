@@ -293,6 +293,14 @@
             }
         }
     }
+    &--gallery {  //CAIT - gallery component
+        background: $primary_green-100;
+        background-size: cover;
+        background-position-y: center;
+        margin: 0 1em 1em 0;
+        height: 350px;
+        @extend .c-card--small-pt-dark;
+    }
     &.list-view{ //--list
         @include maxpoint($tablet){
             display: flex;
