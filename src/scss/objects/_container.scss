@@ -1,0 +1,68 @@
+.o-container {
+    max-width: 1280px;
+    margin: 80px auto;
+    padding: 0 24px;
+    width: 100%;
+    &--full{
+        @extend .o-container;
+        padding: 0;
+    }
+    &--full-opt1{
+        @extend .o-container--full;
+        margin: 0 auto;
+    }
+}
+
+figure{
+    overflow: hidden;
+    object-fit: fill;
+    >img{
+        width: 100%;
+    }
+    &.o-fade{
+        position: relative;
+        
+        &:after{
+            content: '';
+            display: block;
+            position: absolute;
+            bottom: 4px;
+            left: 0;
+            z-index: 1;
+            width: 100%;
+            height: 100px;
+            background: linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0.5) 47.78%, rgba(255, 255, 255, 0) 93.62%);
+            mix-blend-mode: normal;
+            transform: matrix(1, 0, 0, -1, 0, 0);
+            @include maxpoint($tablet){
+                height: 300px;
+            }
+        }
+    }
+}
+
+
+
+.o-container--report { //CAIT
+    //margin-top:0;
+    padding: 0;
+    position: relative;
+    height: 100vh;
+
+    figure {
+        margin: 0;
+        max-width: 100%;
+        height: 50%;
+
+        @include maxpoint($desktop) {
+            height: 100%;
+        }
+        
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            padding: 0;        
+        }
+    }
+}

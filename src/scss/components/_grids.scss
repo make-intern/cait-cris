@@ -1,0 +1,106 @@
+.c-grid{
+    padding: 40px;
+    background: #F7F7F7;
+    /* Card Shadow */
+    box-shadow: 0px 8px 32px rgba(0, 0, 0, 0.05);
+    >h1{
+        margin: 0 0 10px 0;
+        font-family: $secondary_font; //Chap
+        font-style: normal;
+        font-weight: 600;
+        font-size: 38px;
+        line-height: 140%;
+    }
+    >h2{
+        margin: 0;
+        font-family: $primary_font; //Univers LT Std
+        font-style: normal;
+        font-weight: normal;
+        font-size: 21px;
+        line-height: 160%;
+    }
+    &__cards{
+        margin: 26px 0 0 0;
+    }
+}
+
+.c-cards-grid{
+    position: relative;
+    &:before{
+        content: url('/dist/images/art-warm.png');
+        display: block;
+        position: absolute;
+        top: 112px;
+        right: 120px;
+        z-index: 1;
+    }
+    &:after{
+        content: url('/dist/images/art-cool.png');
+        width: 100%;
+        overflow: hidden;
+        display: block;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        z-index: 1;
+        @include maxpoint(375px){
+            width: auto;
+        }
+    }
+    > .c-card{
+        position: relative;
+        z-index: 2;
+        &:not(:first-child){
+            margin-top: 93px;
+        }
+        @include maxpoint($tablet){
+            &:nth-child(odd){
+                margin-left: auto;
+                &.c-card--featured-pt{
+                    margin-right: 40px;
+                }
+            }
+            &:nth-child(even){
+                margin-right: auto;
+                &.c-card--featured-pt{
+                    margin-left: 40px;
+                }
+            }
+        }
+        @include maxpoint($desktop-md){
+            &:nth-child(odd){
+                &.c-card--featured-pt{
+                    margin-right: 80px;
+                }
+            }
+            &:nth-child(even){
+                &.c-card--featured-pt{
+                    margin-left: 80px;
+                }
+            }
+            &:nth-child(n+2){
+                margin-top: -356px;
+            }
+            &:last-child(){
+                width: 533px;
+            }
+        }
+    }
+    &--3{
+        @extend .c-cards-grid;
+        >.c-card{
+            @include maxpoint($desktop-md){
+                &:last-child(){
+                    width: 533px;
+                }
+            }
+        }
+    }
+    &--4{
+        
+    }
+    &--5{
+        
+    }
+    
+}

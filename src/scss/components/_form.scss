@@ -1,0 +1,85 @@
+.c-form{
+    text-align: center;
+    padding: 25px;
+    background: linear-gradient(180.2deg, #F3FAF8 0.68%, rgba(248, 252, 251, 0.588542) 51.38%, rgba(255, 255, 255, 0) 100%);
+    @include maxpoint($tablet){
+        padding: 64px;
+    }
+    h1{
+        font-family: $secondary-font;
+        font-style: normal;
+        font-weight: 600;
+        font-size: 28px;
+        line-height: 140%;
+        color: $neutral-225;
+        margin: 0 0 16px 0;
+    }
+    form{
+        margin-top: 40px;
+        > div{
+            margin-bottom: 24px;
+            
+            &:last-of-type{
+                margin-bottom: 40px;
+            }
+            &:first-of-type{
+                position: relative;
+                display: inline-block;
+                width: auto;
+                &:after{
+                    content: url('/dist/images/arrow_down.svg');
+                    display: inline-block;
+                    position: absolute;
+                    right: 13px;
+                    top: 0;
+                    bottom: 0;
+                    margin: auto;
+                    width: 12px;
+                    height: 7px;
+                }
+            }
+        }
+    }
+    p, label, input, select, option{
+        vertical-align: middle;
+        margin: 0;
+        font-family: $primary-font;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 16px;
+        line-height: 160%;
+        color: $neutral-175;
+    }
+    label{
+        margin-right: 16px;
+        font-size: 21px;
+        color: $neutral-225;
+    }
+    select{
+        border-radius: 0;
+        border: 0;
+        position: relative;
+        cursor: pointer;
+        @include maxpoint($tablet){
+            max-width: 418px;
+        }
+    }
+    input, select{
+        width: 100%;
+        text-align: center;
+        padding: 3px;
+        font-size: 21px;
+        color: $primary_green-100;
+        border-bottom: solid 1px $neutral-225;
+        @include maxpoint($tablet){
+            width: auto;
+        }
+    }
+    .o-button--bordered{
+        font-size: 12px;
+        width: 100%;
+        @include maxpoint($tablet){
+            max-width: 167px;
+        }
+    }
+}

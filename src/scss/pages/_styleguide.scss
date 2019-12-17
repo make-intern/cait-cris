@@ -1,0 +1,93 @@
+.sg-color-block{
+    width: 100px;
+    height: 50px;
+    line-height: 50px !important;
+    color: #ffffff;
+    text-align: center;
+    &.primary_green-100{
+        background: $primary_green-100;
+    }
+    &345.primary_green-75{
+        background: $primary_green-75;
+    }
+    &.primary_green-50{
+        background: $primary_green-50;
+    }
+    &.secondary_gold-100{
+        background: $secondary_gold-100;
+    }
+    &.secondary_gold-50{
+        background: $secondary_gold-50;
+    }
+    &.secondary_gold-25{
+        background: $secondary_gold-25;
+        color: darken($color: $secondary_gold-25, $amount: 50);
+    }
+    &.tertiary_green-100{
+        background: $tertiary_green-100;
+    }
+    &.tertiary_green-75{
+        background: $tertiary_green-75;
+    }
+}
+.blur{
+    position: fixed;
+    // top: 50%;
+    // left: 50%;
+    height: 200px;
+    width: 100%;
+    // margin-top: -100px; /* Negative half of height. */
+    // margin-left: -50%; /* Negative half of width. */
+    // max-width: 1280px;
+    overflow: hidden;
+    z-index: 9999;
+    // margin: 0 auto;
+    // background: rgba(#ffffff, 0.5);
+    &:after{
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        // left: -25px;
+        // right: 0;
+        // top: -25px; 
+        // bottom: 0;
+        background: rgba(0, 23, 11, 0.8);
+        // transform: translateZ(9999);
+        /* Background Blur */
+        backdrop-filter: url('#blur');//blur(6px)
+        // filter: blur(10px);
+    }
+}
+
+// .blur{
+//     position: fixed;
+//     width: 400px;
+//     position: absolute;
+//     display: block;
+//     line-height: 120px;
+//     top: 50%;
+//     left: 50%;
+//     background: inherit;
+//     border-radius: 60px;
+//     overflow: hidden;
+//     color: #08c;
+//     margin: -60px -200px;
+//     text-decoration: none;
+//     font-size: 40px;
+//     visibility: hidden;
+//     background: rgba(0, 23, 11, 0.5);
+//     &:before{
+//       visibility: visible;
+//       content: '';
+//       position: absolute;
+//       width: 110%;
+//       height: 110%;
+//       top: -5%;
+//       bottom: -5%;
+//       background: inherit;
+//       -webkit-filter: url('#blur') saturate(2);
+//       -moz-filter: url('#blur');
+//       filter: url('#blur');
+//     }
+// }

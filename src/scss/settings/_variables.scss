@@ -1,0 +1,38 @@
+$gap: 28px;
+$mobile: 320px;
+$tablet: 769px;
+$desktop: 924px;
+$desktop-md: 1152px + (2 * $gap);
+$desktop-lg: 1344px + (2 * $gap);
+$max-width: 1080px;
+$gutter: 24px;
+
+$breakpoints: (
+  mobile: $mobile,
+  tablet: $tablet,
+  desktop: $desktop,
+  desktop-md: $desktop-md,
+  desktop-lg: $desktop-lg
+);
+
+$breaks: "320px" "768px" "mb", "769px" "924px" "tb", "925px" "2000px" "dt";
+
+$sizes: ("320px" : "mb", "769px": "tb", "924px": "dt", "1200px": "dtmd");
+
+$breakpoints_raw: ( $mobile, $tablet, $desktop, $desktop-md, $desktop-lg );
+
+
+$primary_green-100: #30704C;
+$primary_green-75: #5B7B47;
+$primary_green-50: #A0AF63;
+$secondary_gold-100: #C8AB42;
+$secondary_gold-50: #C6B88E;
+$secondary_gold-25: #F9F7EE;
+$tertiary_green-100: #42AC6A;
+$tertiary_green-75: #57B293;
+
+$neutral-100: #C7C7C7;
+$neutral-125: #A7A7A7;
+$neutral-175: #777777;
+$neutral-200: #575757;
+$neutral-225: #333333;

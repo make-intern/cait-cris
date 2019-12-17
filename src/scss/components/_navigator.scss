@@ -1,0 +1,68 @@
+.c-navigator{
+    > h1{
+        margin: 0 0 8px 0;
+        /* Chap / 39 px / Semibold */
+        font-family: $secondary-font; //Chap
+        font-size: 39px;
+        line-height: 120%;
+        /* identical to box height, or 47px */
+    }
+    > p{
+        margin: 0;
+        /* Univers / 23 px / Roman */
+        font-family: $primary-font; //Univers LT Std
+        font-size: 23px;
+        line-height: 160%;
+        /* identical to box height, or 37px */
+    }
+    .c-filter{
+        margin: 27px 0 24px 0;
+        &-col{
+            > * {
+                margin-left: 0;
+            }
+            > span{
+                margin-right: 42px;
+            }
+            .c-filter__select:first-of-type{
+                margin-right: 69px;
+            }
+        }
+    }
+    &__view{
+        display: none;
+        > .c-gmap{
+            height: 480px;
+            width: 100%;
+        }
+        &:last-of-type{
+            padding-top: 16px;
+        }
+        &.is-active{
+            display: flex;
+        }
+    }
+    .c-view-list{
+        &__col{
+            &:not(:first-child){
+                margin-left: 40px;
+            }
+        }
+        &__row{
+            > h4 {
+                margin: 24px 0 8px 0;
+                font-family: $primary-font; //Univers LT Std
+                font-size: 13px;
+                line-height: 120%;
+                letter-spacing: 0.12em;
+                text-transform: uppercase;
+            }
+            a{
+                font-family: $primary-font; //Univers LT Std
+                font-size: 14px;
+                line-height: 160%;
+                color: #575757;
+            }
+        }
+    }
+}

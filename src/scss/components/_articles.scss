@@ -1,0 +1,303 @@
+.c-article{
+    h1, h2{
+        font-family: $secondary-font; //Chap
+        font-style: normal;
+        font-weight: 600;
+        font-size: 28px;
+        line-height: 140%;
+    }
+    h2{
+        font-size: 21px;
+    }
+    p{ // paragraph and plain texts
+        font-family: $primary-font; //Univers LT Std
+        font-style: normal;
+        font-weight: normal;
+        font-size: 16px;
+        line-height: 160%;
+    }
+    &__opener{
+        font-family: $primary-font; //Univers LT Std
+        font-style: normal;
+        font-weight: normal;
+        font-size: 21px;
+        line-height: 160%;
+    }
+    &__quote{
+        font-family: $secondary-font; //Chap
+        font-style: normal;
+        font-weight: 600;
+        font-size: 28px;
+        line-height: 140%;
+        padding-left: 12px;
+        position: relative;
+        color: $neutral-225;
+        &:before{
+            font-family: $secondary-font; //Chap
+            content: '"';
+            position: absolute;
+            left: -2px;
+            top: 0;
+            width: 28px;
+            height: 28px;
+        }   
+    }
+    &__image{
+        margin-bottom: 80px;
+        figure{
+            margin: 0 0 16px 0;
+        }
+        p{ // image small caption and all p elements
+            margin: 0;
+            font-family: $primary-font; //Univers LT Std
+            font-style: normal;
+            font-weight: normal;
+            font-size: 12px;
+            line-height: 160%;
+            color: $neutral-175;
+        }
+        &-content{
+            padding: 0 24px;
+            @include maxpoint($tablet){
+                padding: 0;
+            }
+            h2{
+                font-family: $secondary-font ; //Chap
+                font-style: normal;
+                font-weight: 600;
+                font-size: 28px;
+                line-height: 140%;
+                color: $neutral-225;
+                margin-bottom: 25px;
+            }
+            p{
+                font-size: 16px;
+                &:nth-child(n+2){
+                    margin-top: 25px;
+                }
+            }
+        }
+        @include maxpoint($desktop){
+            max-width: 738px;
+            figure{
+                max-height: 400px;
+            }
+        }
+        &--left, &--right{
+            max-width: unset;
+            figure{
+                @include maxpoint($tablet){
+                    width: calc((100% * .55) - 32px);
+                }
+            }
+            .c-article__image-content{
+                @include maxpoint($tablet){
+                    width: calc((100% * .45) - 32px);
+                }
+            }
+        }
+    }
+    &__tags{
+        .label, a{
+            font-family: $primary-font; //Univers LT Std
+            font-style: normal;
+            font-weight: bold;
+            font-size: 12px;
+            line-height: 160%;
+            letter-spacing: 0.16em;
+            text-transform: uppercase;
+            color: $primary_green-100; //#30704C
+        }
+        .label{
+            color: $secondary_gold-100; //#C8AB42
+            margin-right: 15px;
+        }
+        a{
+            &:after{
+                content: ",";
+                color: $primary_green-100; //#30704C
+                width: 12px;
+
+            }
+        }
+    }
+    &__related{
+        h1{
+            margin: 0;
+            font-family: $secondary-font; //Chap
+            font-style: normal;
+            font-weight: 600;
+            font-size: 28px;
+            line-height: 140%;
+        }
+        &-article{
+            padding: 16px 0;
+            border-bottom: 1px solid rgba(215, 215, 215, 0.5);
+            display: block;
+            font-family: $secondary-font; //Chap
+            font-style: normal;
+            font-weight: 600;
+            font-size: 21px;
+            line-height: 140%;
+            color: gray;
+            &:first-of-type{
+                padding-top: 12px;
+            }
+            &:last-of-type{
+                border: 0;
+            }
+            .date{
+                margin: 0 0 10px 0;
+                display: block;
+                font-family: $primary-font; //Univers LT Std
+                font-style: normal;
+                font-weight: normal;
+                font-size: 12px;
+                line-height: 140%;
+                /* identical to box height, or 17px */
+                letter-spacing: 0.12em;
+                text-transform: uppercase;
+            }
+        }
+    }
+    &__social{
+        h3{
+            margin: 0 0 18px 0;
+            font-family: $primary-font; //Univers LT Std
+            font-style: normal;
+            font-weight: bold;
+            font-size: 12px;
+            line-height: 160%;
+            letter-spacing: 0.16em;
+            text-transform: uppercase;
+        }
+        >button:not(:first-of-type){
+            margin-left: 24px;
+        }
+    }
+}
+
+.o-heading-eyebrow{
+    span{
+        font-family: $primary-font-cn;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 13px;
+        line-height: 120%;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: $secondary_gold-100;
+        &:before{
+            content: '';
+            display: inline-block;
+            width: 5%;
+            height: 11px;
+            background: #DCD4BD;
+            margin-right: 15px;
+            @include maxpoint($tablet){
+                width: 87px;
+                margin-right: 24px;
+            }
+            @include maxpoint($desktop){
+                width: 151px;
+            }
+        }
+    }
+    >  :not(span){
+        margin: 0 25px;
+        max-width: 766px; //738px
+        @include maxpoint($tablet){
+            margin: 0 25px 0 111px;
+        }
+        @include maxpoint($desktop){
+            margin: 0 0 0 175px;
+        }
+    }
+    h1, h2{
+        margin: 16px 0 40px 0;
+        font-family: $secondary-font;
+        font-style: normal;
+        font-weight: 600;
+        font-size: 38px;
+        line-height: 140%;
+        color: $neutral-225;
+        @include maxpoint($tablet){
+            margin: 16px 25px 40px 111px;
+        }
+        @include maxpoint($desktop){
+            margin: 16px 0 40px 175px;
+        }
+    }
+    h2{
+        margin: 0 0 23px 0;
+        font-size: 28px;
+        @include maxpoint($tablet){
+            margin: 0 25px 23px 111px;
+        }
+        @include maxpoint($desktop){
+            margin: 0 25px 23px 175px;
+        }
+    }
+    p{
+        font-family: $primary-font;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 16px;
+        line-height: 160%;
+        color: $neutral-175;
+    }
+
+    
+    
+}
+
+.o-quote{
+    margin-left: 0;
+    padding: 0 24px;
+    position: relative;
+    &:before{
+        content: url('/dist/images/quote--gold.svg');
+        position: absolute;
+        top: -50px;
+        left: 0;
+        display: block;
+        width: auto;
+        height: auto;
+        @include maxpoint($desktop){
+            top: -50px;
+            left: -65px;
+        }
+    }
+    @include maxpoint($desktop){
+        padding: 0;
+        width: calc(100% * .45);
+    }
+    &__text{
+        margin-bottom: 24px;
+        font-family: $secondary-font; //Chap
+        font-style: normal;
+        font-weight: 600;
+        font-size: 28px;
+        line-height: 140%;
+        color: $neutral-225;
+        transform: translateZ(2px);
+    }
+    &__author{
+        font-family: $primary-font; //Univers LT Std
+        font-style: normal;
+        font-weight: normal;
+        font-size: 16px;
+        line-height: 160%;
+        color: $secondary_gold-100;
+        transform: translateZ(2px);
+        >span{
+            display: block;
+            margin-top: 8px;
+            font-weight: bold;
+            font-size: 12px;
+            letter-spacing: 0.16em;
+            text-transform: uppercase;
+            color: $neutral-200;
+        }
+    }
+}

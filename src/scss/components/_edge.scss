@@ -1,0 +1,63 @@
+.c-edge{
+    @include maxpoint($tablet){
+        display: flex;
+    }
+    &--la{
+        @extend .c-edge;
+        @include maxpoint($desktop){
+            margin-right: 112px;
+        }
+    }
+    &--ra{
+        @extend .c-edge;
+        @include maxpoint($desktop){
+            margin-left: 112px;
+        }
+    }
+    >figure{
+        img{
+            height: 100%;
+        }
+        @include maxpoint($tablet){
+            width: calc(100% * .5);
+        }
+        @include maxpoint($desktop){
+            width: calc(100% * .74 );
+        }
+    }
+    &__content{
+        font-style: normal;
+        padding: 25px;
+        >span{
+            font-family: $primary-font-cn;
+            font-weight: bold;
+            font-size: 13px;
+            line-height: 120%;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: $secondary_gold-100;
+        }
+        >h1{
+            margin: 16px 0;
+            font-family: $secondary-font;
+            font-weight: 600;
+            font-size: 28px;
+            line-height: 140%;
+            color: $neutral-225;
+        }
+        >p{
+            margin: 0 0 25px 0;
+            font-family: $primary-font;
+            font-weight: normal;
+            font-size: 16px;
+            line-height: 160%;
+            color: $neutral-175;
+        }
+        @include maxpoint($tablet){
+            width: calc(100% * .5 );
+        }
+        @include maxpoint($desktop){
+            padding: 64px;
+        }
+    }
+}

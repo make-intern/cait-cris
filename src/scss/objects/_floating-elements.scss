@@ -1,0 +1,65 @@
+.o-sketch{
+    position: relative;
+    &:after{
+        content: '';
+        display: block;
+        position: absolute;
+    }
+    &--house-1{
+        @extend .o-sketch;
+        &:after{
+            top: -102px;
+            right: 0;
+            background: url('/dist/images/sketch--house-1.png') no-repeat;
+            background-size: contain;
+            height : 480px;
+            width: 100%;
+            max-width: 988px;
+        }
+    }
+    &--house-2{
+        &:after{
+            background: url('/dist/images/sketch--house-2.png') no-repeat;
+            background-size: contain;
+        }
+    }
+    &--building-1{
+        @extend .o-sketch;
+        &:after{
+            top: 0;
+            right: 0;
+            background: url('/dist/images/sketch--building-1.png') no-repeat;
+            background-size: contain;
+            height: 441px;
+            width: 100%;
+            max-width: 966px;
+        }
+    }
+    &--building-2{
+        &:after{
+            background: url('') no-repeat;
+            background-size: contain;
+        }
+    }
+}
+
+.o-bg{
+    &--gradient-gold{
+        position: relative;
+        &:after{
+            content: '';
+            background: linear-gradient(180.85deg, rgba(255, 255, 255, 0) 0.68%, #F7F4E7 49.75%, rgba(255, 255, 255, 0) 100%);
+            position: absolute;
+            top: 0;
+            right: 0;
+            height: 100%;
+            width: 70%;
+            z-index: 1;
+        }
+        > * {
+            position: relative;
+            z-index: 2;
+            transform: translateZ(2px);
+        }
+    }
+}

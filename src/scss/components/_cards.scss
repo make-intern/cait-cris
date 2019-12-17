@@ -1,0 +1,319 @@
+.c-card{
+    width: 100%;
+    overflow: hidden;
+    margin-bottom: 20px;
+    .o-button--icon{
+        padding: 0;
+    }
+    @include maxpoint($tablet){
+        max-width: 338px;
+        margin-bottom: 0;
+    }
+    >figure{
+        width: 100%;
+        height: 100%;
+        height: 221px;
+        overflow: hidden;
+        > img{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+    &__content{
+        font-family: $primary-font; //Univers LT Std
+        width: 100%;
+        color: #979797;
+        >span{//date
+            display: block;
+            margin: 24px 0 0 0;
+            font-size: 12px;
+            line-height: 140%;
+            letter-spacing: 0.12em;
+            color: $neutral-125;
+            text-transform: uppercase;
+        }
+        >h3           {
+            font-family: $secondary-font; //Chap
+            font-style: normal;
+            font-weight: 600;
+            font-size: 21px;
+            line-height: 140%;
+            margin: 32px 0 16px 0;
+        }
+        >p{
+            font-size: 16px;
+            line-height: 160%;   
+        }
+    }
+    &--small{
+        height: 221px;
+        position: relative;
+        .c-card__content{
+            padding: 11px 16px;
+            position: absolute; 
+            left: 0;
+            bottom: 0;
+            > h3{
+                margin: 0 0 24px 0;          
+            }
+        }
+    }
+    &--small-pt-dark { //CAIT - search/gallery component
+        max-width: unset;
+        height: 221px;
+        position: relative;
+
+        @include maxpoint($desktop) {
+            max-width: 270px;
+            height: 350px;
+        }
+
+        &::after {
+            content: '';
+            background: rgba(black, 0.3);
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            bottom:0;
+            z-index: 1;        
+        }
+
+        .c-card__content{
+            padding: 11px 16px;
+            position: absolute; 
+            left: 0;
+            bottom: 0;
+
+            z-index: 2;
+            > h3{
+                margin: 0 0 24px 0;
+
+                color: #fff;          
+            }
+        }
+    }
+    &--news{
+        background: #F7F7F7;
+        .c-card__content{
+            padding: 40px 25px;
+            background: #FFFFFF;
+            box-shadow: 0px 8px 24px rgba(0, 0, 0, 0.05);
+            >span{
+                margin: 0;
+            }
+            >h3{
+                margin: 16px 0; //24px 0 16px 0
+                font-size: 21px;
+                line-height: 140%;
+            }
+        }
+    }
+    &--news-gallery{ //CAIT - search page 
+        max-width:unset;
+        box-shadow: 0px 8px 24px rgba(0, 0, 0, 0.05);
+        @extend .c-card--news;
+
+        &:nth-child(3n) {
+            margin: 0 0 24px 0;
+        }
+
+        @include maxpoint($desktop) {
+            margin: 0 24px 24px 0;
+            flex: 1 31%;
+
+            &:nth-child(3n) {
+                margin: 0 24px 24px 0;
+            }
+        }
+    }
+    &--news-ls{
+        position: relative;
+        box-shadow: 0px 8px 32px rgba(0, 0, 0, 0.05);
+        @include maxpoint($tablet){
+            display: flex;
+            max-width: 647px;
+            max-height: 344px;
+        }
+        figure{
+            @include maxpoint($tablet){
+                max-width: 290px;
+                height: 100%;
+                position: absolute;
+                object-fit: cover;
+            }
+        }
+        .c-card__content{
+            padding: 24px;
+            @include maxpoint($tablet){
+                padding: 40px 24px 40px 330px;
+            }
+            >span{
+                margin-top: 0;
+                @include maxpoint($tablet){
+                    
+                }
+            }
+            h3{
+                margin-top: 16px;
+            }
+            >p{
+                margin-bottom: 0;
+            }
+        }
+    }
+    &--news-ls-mini{
+        height: 160px;
+        display: flex;
+        align-items: center;
+        background-size: cover;
+        position: relative;
+        &:after{
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 250, 234, 0.8);
+            mix-blend-mode: screen;
+            z-index: 1;
+        }
+        @include maxpoint($tablet){
+            max-width: 369px;
+        }
+        .c-card__content{
+            position: relative;
+            z-index: 2;
+            color: $neutral-225;
+            padding: 25px;
+            @include maxpoint($tablet){
+                padding: 32px;
+            }
+            >span{
+                color: $neutral-225;
+                margin: 0 0 16px 0;
+            }
+            >h3{
+                margin: 0;
+            }
+        }
+    }
+    &--accord{
+        height: 449px;
+        padding: 27px 24px;
+        display: flex;
+        align-items: flex-end;
+        background-size: cover;
+        .c-card__content{
+            > h3{
+                margin: 0 0 8px 0;
+                color: white;
+            }
+        }
+        .o-button--icon{
+            color: white;
+        }
+    }
+    &--featured{
+        display: block;
+        max-width: unset;
+        &-ls{
+            // @include maxpoint(375px){
+            //     .c-card__content{
+            //         margin-left: 40px;
+            //     }
+            // }
+            @include maxpoint($tablet){
+                width: 628px;
+                figure{
+                    height: 393px;
+                }
+            }
+        }
+        &-pt{
+            @include maxpoint(375px){
+                .c-card__content{
+                    margin-left: 25px;
+                }
+            }
+            @include maxpoint($tablet){
+                width: 453px;
+                figure{
+                    height: 582px;
+                }
+            }
+        }
+        .c-card__content{
+            padding: 40px;
+            margin-top: -65px;
+            background: #ffffff;
+            transform: translateZ(1px);
+            box-shadow: 0px 8px 24px rgba(0, 0, 0, 0.05);
+            border-radius: 0px;
+            >h3{
+                margin: 0;
+            }
+            >p{
+                margin: 40px 0;
+            }
+            @include maxpoint($tablet){
+                margin-top: -111px;
+                width: 357px;
+            }
+        }
+    }
+    &--social{
+        background-size: contain;
+        background-repeat: no-repeat;
+        position: relative;
+        &:before{
+            content: url('/dist/images/icon_ig--white.svg');
+            width: 24px;
+            height: 24px;
+            color: white;
+            // background: url('/dist/images/icon_ig.svg') no-repeat;
+            // background-size: cover;
+            position: absolute;
+            bottom: 12px;
+            right: 12px;
+        }
+        &-sm{
+            @extend .c-card--social;
+            width: 262px;
+            height: 262px;
+        }
+        &-lg{
+            @extend .c-card--social;
+            width: 320px;
+            height: 320px;
+            @include maxpoint(340px){
+                width: 357px;
+                height: 357px;
+            }
+        }
+    }
+    &.list-view{ //--list
+        @include maxpoint($tablet){
+            display: flex;
+            max-width: unset;
+        }
+        > figure{
+            max-width: 357px;
+            // height: 100%;
+        }
+        .c-card__content{
+            padding: 24px;
+            >span{
+                margin: 9px 0 0 0;
+            }
+            >h3{
+                margin: 20px 0;
+            }
+            >p{
+                margin: 0;
+            }
+        }
+    }
+
+}

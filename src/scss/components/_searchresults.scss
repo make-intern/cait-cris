@@ -1,0 +1,62 @@
+.c-search { //CAIT
+    &__results {
+
+        h1 {
+            color: $neutral-225;
+            font-size: 47px;
+            margin: 0 0 40px 0;
+        }
+
+        span {
+            color: $neutral-200;
+
+            .text-result {
+                color: $neutral-125;
+            }
+        }
+    }
+
+    &__filter-tabs {
+        margin: 45px 0 25px 0;
+
+        div {
+            margin-right: 25px;
+        }
+    
+        .tab-link {
+            font-weight: bold;
+            font-size: 12px;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            color: $neutral-125;
+    
+            &.is-active-tab {
+                color: $primary_green-100;
+            } 
+        }
+    }
+
+    &__properties {
+        flex-wrap: wrap;
+        justify-content: space-between;
+        display: none;
+
+        &.is-active{
+            display: flex;
+        }
+
+    }
+
+    &__articles{
+        flex-wrap: wrap;
+        justify-content: space-between;
+        display: none;
+
+        &.is-active{
+            display: flex;
+        }
+    }
+}
+
+
+

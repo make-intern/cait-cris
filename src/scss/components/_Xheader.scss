@@ -1,0 +1,120 @@
+header{
+    position: fixed;
+    top: 0;
+    // position: relative;
+    z-index: 9999;
+    right: 0;
+    left: 0;
+    transform: translateZ(9999);
+    transition: top ease 500ms;
+    &:after{
+        content: '';
+        position: absolute;
+        opacity: 0;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        background: rgba(0, 23, 11, 0.8);
+        /* Background Blur */
+        backdrop-filter: url('#blur');//blur(6px)
+        // filter: blur(10px);
+        transition: all ease 500ms;
+        z-index: -2;
+    }
+    >div{
+        max-width: 1280px;
+        padding: 36px 40px;
+        margin: 0 auto;
+    }
+    .o-logo{
+        width: 112px;
+        height: 24px;
+        @include maxpoint($tablet){
+            width: 191px;
+            height: 41px;
+        }
+        // margin-right: auto;
+    }
+    nav{
+        margin-left: 40px;
+    }
+    .o-button--bordered{
+        span:before, span:after{
+            mix-blend-mode: unset;
+            background: white;
+        }
+        span.text{
+            color: white;
+        }
+    }
+    &.is-fixed, &:hover{ //Fixed state on scroll
+        
+        top: 0;          
+        &:after{
+            opacity: 1;
+        }
+    }
+    > svg{
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;;
+    }
+
+
+    .c-search{
+        &__field{
+            // position: absolute;
+            // width: calc(100% - 156px);
+            // height: 60%;
+            // top: 0;
+            // bottom: 0;
+            margin: auto 0 auto 40px;
+            width: calc(100% * .55);
+            // max-width: 650px;
+            max-width: 0;
+            position: relative;
+            // right: -100%;
+            overflow: hidden;
+            transition: all ease 500ms;
+            position: relative;
+            right: 0;
+            input{
+                background: transparent;
+                position: relative;
+                width: 100%;
+                border-bottom: solid 1px #c7c7c7;
+                font-family: $primary-font; //Univers LT Std
+                font-size: 16px;
+                line-height: 160%;
+                
+            }
+            
+            &.is-active{
+                max-width: 650px;
+                animation: fadeIn ease 500ms forwards;
+                // right: 0;
+            }
+        }
+        &__close{
+            cursor: pointer;
+            position: absolute;
+            z-index: 9999;
+            right: 0;
+            width: 16px;
+            height: 16px;
+            line-height: 140%;
+            background: url('/dist/images/close.svg') no-repeat;
+            background-size: contain;
+        }
+        
+        &__button{
+            margin: 0 25px 0 auto;
+            color: white;
+        }
+    }
+}
+
+
+

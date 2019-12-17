@@ -1,0 +1,79 @@
+.box {
+    display: flex;
+    flex-wrap: wrap;
+    box-sizing: border-box;
+    // > div{
+    //     line-height: 0;
+    // }
+    > * {
+        box-sizing: border-box;
+        flex-basis: 100%;
+        // padding-left: $gutter;
+        // padding-right: $gutter;
+        
+        &.no-gutter {
+            padding-left: 0;
+            padding-right: 0;
+        }
+        
+        // columns
+        // @each $device, $size in $sizes {
+        //     @include maxpoint(#{$device}) {
+        //         @for $i from 1 through 12 {
+        //             &.#{$size}-col-#{$i} {
+        //                 flex: 0 0 calc( (#{$i} * 100%) / 12 );
+        //             }
+        //         }   
+        //     }
+        // }
+
+
+        @each $device, $size in $sizes {
+            @include maxpoint(#{$device}) {
+                @for $i from 1 through 12 {
+                    &.#{$size}-col-#{$i} {
+                        flex: 0 0 calc( ((#{$i} * 100%) / 12));
+                        @for $x from 20 through 22 {
+                            &-#{$x} {
+                                flex: 0 0 calc( ((#{$i} * 100%) / 12) - #{$x}px );
+                            }
+                        }
+                    }
+                }   
+            }
+        }
+    }
+}
+
+.flex-masonry{
+    display: flex;
+    flex-flow: row wrap;
+    margin-left: -8px; /* Adjustment for the gutter */
+    width: 100%;
+}
+
+// .masonry { 
+//     display: flex;
+//     flex-flow: row wrap;
+//     margin-left: -8px; /* Adjustment for the gutter */
+//     width: 100%;
+//   }
+  
+//   .masonry-brick {
+//     flex: auto;
+//     height: 250px;
+//     min-width: 150px;
+//     margin: 0 8px 8px 0; /* Some gutter */
+//   }
+
+  .masonry { 
+    display: flex;
+    flex-flow: column wrap;
+    max-height: 800px;
+    margin-left: -8px; /* Adjustment for the gutter */
+    width: 100%;
+  }
+  
+  .masonry-brick {
+    margin: 0 8px 8px 0; /* Some gutter */
+  }
