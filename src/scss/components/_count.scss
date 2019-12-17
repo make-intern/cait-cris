@@ -1,0 +1,105 @@
+//CAIT
+.c-count{
+    width: 100%;
+    max-width: 100%;
+    margin-bottom: 20px;
+
+    @include maxpoint($desktop){
+        margin-bottom: 0;
+        max-width: 453px;
+    }
+    &__item{
+        width: auto;
+        margin-bottom: 20px;
+        text-align: center;
+
+        @include maxpoint($tablet){          
+            text-align: unset;
+            max-width: 134px;
+            margin-bottom: 0;
+        }
+        >h3{
+            margin: 0;
+            font-family: 'Alatsi', sans-serif; // font-family: $primary-font-cn; //Univers LT Std Condensed
+            font-style: normal;
+            font-weight: normal;
+            font-size: 12px;
+            line-height: 160%;
+            /* or 19px */
+            letter-spacing: 0.16em;
+            text-transform: uppercase;
+            color: $neutral-225;
+        }
+        >div{
+            font-family: 'Alatsi', sans-serif; //font-family: $primary-font-cn; //Univers LT Std Condensed
+            font-style: normal;
+            font-weight: normal;
+            font-size: 67px;
+            line-height: 140%;
+            text-align: center;
+            > span{
+                font-size: 14px;
+                text-transform: uppercase;
+                line-height: normal;
+                align-self: flex-start;
+                margin-top: 15px;
+            }
+            &:first-of-type{
+                display: flex;
+                align-items: center;
+                justify-content: space-evenly;
+                color: $secondary_gold-100;
+            }
+            &:last-of-type{
+                display: block;
+                font-style: normal;
+                font-weight: bold;
+                font-size: 21px;
+                line-height: 120%;
+                /* or 25px */
+                letter-spacing: 0.16em;
+                text-transform: uppercase;
+                color: $neutral-225;
+            }
+        }
+    }
+    &--box { //CAIT
+        align-items: center;
+        margin-top: 30px;
+        flex-wrap: wrap;
+
+        .c-count__item {
+            max-width: 200px;
+            margin-bottom: 30px;
+
+            @include maxpoint($tablet) {
+                max-width: 285px;
+            }
+
+            @include maxpoint($desktop) {
+                max-width: 220px; //134px
+               // margin-bottom: 30px;//0
+            }
+            
+            >div{
+                text-align: center;
+                @include maxpoint($desktop) {
+                    text-align: left;
+                }
+
+                &:first-of-type{
+                    align-items: center;
+                    color: $secondary_gold-100;
+
+                    @include maxpoint($desktop){
+                        justify-content: flex-start;
+                    }
+                }
+                &:last-of-type{
+                    color: $neutral-175;
+                    margin: 0 auto;
+                }
+            }
+        }
+    }
+}

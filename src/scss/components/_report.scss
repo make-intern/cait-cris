@@ -124,5 +124,40 @@
             margin: 25px auto 0 0;
         }
     }
+     &--box {
+        max-width: 90%;
+        margin: 0 auto;
+        margin-bottom: 30px;
+        background: #fff;
+        padding: 40px 40px 30px;
+        flex-wrap: wrap;
+        position: relative;
+        z-index: 2;
+        margin-top: -50px;
+
+        @include maxpoint($desktop){
+            max-width: 628px;
+            position: absolute;
+            top: 100px;
+            right: 0;
+        }
+
+        .c-report__text {
+            margin-bottom: 0;
+
+            @include maxpoint($desktop){
+                margin: 0;
+                width: calc(100% * .85);
+            }
+
+            > h1 {
+                color: black;
+            }
+
+            > p {
+                color: gray;
+            }
+        }     
+    }
 
 }
