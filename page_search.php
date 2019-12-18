@@ -12,10 +12,10 @@
                 <span><b>"Arca South"</b></span>
             </div>
             <div class="c-search__filter-tabs [ u-df-mb u-df-mb-fd-r ]">
-                <div><a href="#" id="p-link" class="tab-link is-active-tab" data-target="property" >Properties 
+                <div><a href="#" id="p-link" class="property-link is-active-tab" data-target="property" >Properties 
                     <span>(1)</span></a>
                 </div>
-                <div><a href="#" id="a-link" class="tab-link" data-target="article" >Articles 
+                <div><a href="#" id="a-link" class="article-link" data-target="article" >Articles 
                     <span>(9)</span></a>
                 </div>
             </div>

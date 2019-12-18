@@ -4179,7 +4179,7 @@ footer > div:last-child a {
   margin-right: 25px;
 }
 
-.c-search__filter-tabs .tab-link {
+.c-search__filter-tabs .property-link, .c-search__filter-tabs .article-link {
   font-weight: bold;
   font-size: 12px;
   letter-spacing: 1.5px;
@@ -4187,7 +4187,7 @@ footer > div:last-child a {
   color: #A7A7A7;
 }
 
-.c-search__filter-tabs .tab-link.is-active-tab {
+.c-search__filter-tabs .property-link.is-active-tab, .c-search__filter-tabs .article-link.is-active-tab {
   color: #30704C;
 }
 

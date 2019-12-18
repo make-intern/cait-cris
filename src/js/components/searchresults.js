@@ -7,10 +7,10 @@ export class searchresults {
     }
 
     getElements(){
-        this.propertyResults = document.getElementById("p-results");
-        this.articleResults = document.getElementById("a-results");
-        this.propertyButton = document.getElementById('p-link');
-        this.articleButton = document.getElementById('a-link');
+        this.propertyResults = document.querySelector(".c-search__properties");
+        this.articleResults = document.querySelector(".c-search__articles");
+        this.propertyButton = document.querySelector('.property-link');
+        this.articleButton = document.querySelector('.article-link');
     }
 
     getTarget(element){

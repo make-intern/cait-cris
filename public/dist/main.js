@@ -434,17 +434,11 @@ var search = function () {
     }, {
         key: 'checkState',
         value: function checkState(element) {
-            if (element.datset.target) {
+            if (element.classList.contains('is-active')) {
                 this.setState("remove");
             } else {
                 this.setState("add");
             }
-        }
-    }, {
-        key: 'gettarget',
-        value: function gettarget(element) {
-            var elmenttarget = element.datset.target;
-            this.checkState(elmenttarget);
         }
     }, {
         key: 'setState',
@@ -4251,10 +4245,10 @@ var searchresults = function () {
     _createClass(searchresults, [{
         key: "getElements",
         value: function getElements() {
-            this.propertyResults = document.getElementById("p-results");
-            this.articleResults = document.getElementById("a-results");
-            this.propertyButton = document.getElementById('p-link');
-            this.articleButton = document.getElementById('a-link');
+            this.propertyResults = document.querySelector(".c-search__properties");
+            this.articleResults = document.querySelector(".c-search__articles");
+            this.propertyButton = document.querySelector('.property-link');
+            this.articleButton = document.querySelector('.article-link');
         }
     }, {
         key: "getTarget",
