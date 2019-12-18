@@ -18,8 +18,8 @@ export class searchresults {
         this.setActiveTarget(target);
     }
 
-    setActiveTarget(state) {
-        if(state === "property") {
+    setActiveTarget(elementType) {
+        if(elementType === "property") {
             this.propertyResults.classList.add('is-active');
             this.articleResults.classList.remove("is-active");
             this.propertyButton.classList.add('is-active-tab');

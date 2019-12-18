@@ -4258,8 +4258,8 @@ var searchresults = function () {
         }
     }, {
         key: "setActiveTarget",
-        value: function setActiveTarget(state) {
-            if (state === "property") {
+        value: function setActiveTarget(elementType) {
+            if (elementType === "property") {
                 this.propertyResults.classList.add('is-active');
                 this.articleResults.classList.remove("is-active");
                 this.propertyButton.classList.add('is-active-tab');
