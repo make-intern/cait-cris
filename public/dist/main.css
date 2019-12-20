@@ -4187,7 +4187,7 @@ footer > div:last-child a {
   color: #A7A7A7;
 }
 
-.c-search__filter-tabs .property-link.is-active-tab, .c-search__filter-tabs .article-link.is-active-tab {
+.c-search__filter-tabs .property-link.is-active, .c-search__filter-tabs .article-link.is-active {
   color: #30704C;
 }
 

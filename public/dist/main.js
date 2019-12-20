@@ -196,7 +196,7 @@ var passiveOption = supportsPassive ? { passive: true } : false;
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(9);
-module.exports = __webpack_require__(53);
+module.exports = __webpack_require__(54);
 
 
 /***/ }),
@@ -212,6 +212,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__components_gallerySlider__ = __webpack_require__(14);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__components_navigator__ = __webpack_require__(51);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__components_searchresults__ = __webpack_require__(52);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__components_sample_ex__ = __webpack_require__(53);
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -224,6 +225,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
 
 
+ //CAIT
  //CAIT
 
 var App = function () {
@@ -260,6 +262,7 @@ app.component(new __WEBPACK_IMPORTED_MODULE_4__components_gallerySlider__["a" /*
 app.component(new __WEBPACK_IMPORTED_MODULE_5__components_navigator__["a" /* navigator */]());
 
 app.component(new __WEBPACK_IMPORTED_MODULE_6__components_searchresults__["a" /* searchresults */]()); //CAIT
+app.component(new __WEBPACK_IMPORTED_MODULE_7__components_sample_ex__["a" /* alertdata */]()); //CAIT
 
 document.addEventListener("DOMContentLoaded", function () {
   return app.boot();
@@ -4236,56 +4239,56 @@ var searchresults = function () {
     function searchresults() {
         _classCallCheck(this, searchresults);
 
-        this.propertyResults = null;
-        this.articleResults = null;
-        this.propertyButton = null;
-        this.articleButton = null;
+        this.tabResults = null;
+        this.tabLink = null;
+        this.searchResults = null;
     }
 
     _createClass(searchresults, [{
-        key: "getElements",
+        key: 'getElements',
         value: function getElements() {
-            this.propertyResults = document.querySelector(".c-search__properties");
-            this.articleResults = document.querySelector(".c-search__articles");
-            this.propertyButton = document.querySelector('.property-link');
-            this.articleButton = document.querySelector('.article-link');
+            this.tabResults = Array.from(document.querySelectorAll('.js-tab-results'));
+            this.tabLink = Array.from(document.querySelectorAll('.js-tab-link'));
+            this.searchResults = document.getElementById('js-search-results');
         }
     }, {
-        key: "getTarget",
+        key: 'getTarget',
         value: function getTarget(element) {
-            var target = element.dataset.target;
-            this.setActiveTarget(target);
+            var activeTab = element.dataset.target;
+            this.setActiveTarget(activeTab, element);
         }
     }, {
-        key: "setActiveTarget",
-        value: function setActiveTarget(elementType) {
-            if (elementType === "property") {
-                this.propertyResults.classList.add('is-active');
-                this.articleResults.classList.remove("is-active");
-                this.propertyButton.classList.add('is-active-tab');
-                this.articleButton.classList.remove('is-active-tab');
-            } else {
-                this.propertyResults.classList.remove('is-active');
-                this.articleResults.classList.add("is-active");
-                this.propertyButton.classList.remove('is-active-tab');
-                this.articleButton.classList.add('is-active-tab');
-            }
+        key: 'resetActive',
+        value: function resetActive(tabs) {
+            tabs.forEach(function (element) {
+                element.classList.remove('is-active');
+            });
         }
     }, {
-        key: "bindElements",
+        key: 'setActiveTarget',
+        value: function setActiveTarget(target, targetTab) {
+            var elementType = this.searchResults.querySelector("[data-targetEL='" + target + "' ]");
+
+            this.resetActive(this.tabResults);
+            this.resetActive(this.tabLink);
+
+            elementType.classList.add("is-active");
+            targetTab.classList.add("is-active");
+        }
+    }, {
+        key: 'bindElements',
         value: function bindElements() {
             var _this = this;
 
-            this.propertyButton.addEventListener('click', function () {
-                _this.getTarget(_this.propertyButton);
-            });
-
-            this.articleButton.addEventListener('click', function () {
-                _this.getTarget(_this.articleButton);
+            this.tabLink.forEach(function (element) {
+                element.addEventListener('click', function () {
+                    _this.getTarget(element);
+                    console.log(element);
+                });
             });
         }
     }, {
-        key: "init",
+        key: 'init',
         value: function init() {
             this.getElements();
             this.bindElements();
@@ -4297,6 +4300,61 @@ var searchresults = function () {
 
 /***/ }),
 /* 53 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return alertdata; });
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+var alertdata = function () {
+    function alertdata() {
+        _classCallCheck(this, alertdata);
+
+        this.aLink = null;
+    }
+
+    _createClass(alertdata, [{
+        key: 'getElements',
+        value: function getElements() {
+            this.aLink = Array.from(document.querySelectorAll('.js-link'));
+        }
+    }, {
+        key: 'getTarget',
+        value: function getTarget(element) {
+            var target = element.dataset.attribute;
+            this.alertTarget(target);
+        }
+    }, {
+        key: 'alertTarget',
+        value: function alertTarget(type) {
+            alert('This is the ' + type + ' attribute');
+        }
+    }, {
+        key: 'bindElements',
+        value: function bindElements() {
+            var _this = this;
+
+            this.aLink.forEach(function (element) {
+                element.addEventListener('click', function () {
+                    _this.getTarget(element);
+                });
+            });
+        }
+    }, {
+        key: 'init',
+        value: function init() {
+            this.getElements();
+            this.bindElements();
+        }
+    }]);
+
+    return alertdata;
+}();
+
+/***/ }),
+/* 54 */
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin

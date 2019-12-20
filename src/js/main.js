@@ -6,7 +6,8 @@ import { heroGallery } from './components/herogallery';
 import { gallerySlider } from './components/gallerySlider';
 import { navigator } from './components/navigator';
 
-import { searchresults } from './components/searchresults'; //CAIT
+import { searchresults } from './components/searchresults'; //CAIT - search results page
+import { alertdata } from './components/sample-ex'; //CAIT -  sample js
 
 class App {
   constructor() {
@@ -31,7 +32,8 @@ app.component(new search());
 app.component(new gallerySlider());
 app.component(new navigator());
 
-app.component(new searchresults()); //CAIT
+app.component(new searchresults()); //CAIT - search results page
+app.component(new alertdata()); //CAIT-  sample js
 
 document.addEventListener("DOMContentLoaded", () => app.boot());
 

@@ -1,44 +1,45 @@
 export class searchresults {
     constructor() {
-        this.propertyResults = null;
-        this.articleResults = null;
-        this.propertyButton = null;
-        this.articleButton = null;
+        this.tabResults = null;
+        this.tabLink = null;
+        this.searchResults = null;
     }
 
-    getElements(){
-        this.propertyResults = document.querySelector(".c-search__properties");
-        this.articleResults = document.querySelector(".c-search__articles");
-        this.propertyButton = document.querySelector('.property-link');
-        this.articleButton = document.querySelector('.article-link');
+    getElements(){ 
+        this.tabResults = Array.from(document.querySelectorAll('.js-tab-results'));
+        this.tabLink = Array.from(document.querySelectorAll('.js-tab-link'));
+        this.searchResults = document.getElementById('js-search-results');
     }
 
     getTarget(element){
-        let target = element.dataset.target;
-        this.setActiveTarget(target);
+        let activeTab = element.dataset.target;
+        this.setActiveTarget(activeTab, element);
     }
 
-    setActiveTarget(elementType) {
-        if(elementType === "property") {
-            this.propertyResults.classList.add('is-active');
-            this.articleResults.classList.remove("is-active");
-            this.propertyButton.classList.add('is-active-tab');
-            this.articleButton.classList.remove('is-active-tab');
-        } else {
-            this.propertyResults.classList.remove('is-active');
-            this.articleResults.classList.add("is-active");
-            this.propertyButton.classList.remove('is-active-tab');
-            this.articleButton.classList.add('is-active-tab');
-        }
+    resetActive(tabs){
+        tabs.forEach((element) => {
+            element.classList.remove('is-active');
+            
+        });
+    }
+
+    setActiveTarget(target, targetTab) {
+        let elementType = this.searchResults.querySelector("[data-targetEL='" + target + "' ]");
+
+        this.resetActive(this.tabResults);
+        this.resetActive(this.tabLink);
+
+        elementType.classList.add("is-active");
+        targetTab.classList.add("is-active");
     }
 
     bindElements() {
-        this.propertyButton.addEventListener('click', () => {    
-            this.getTarget(this.propertyButton);
-        });
+        this.tabLink.forEach((element) => {
+            element.addEventListener('click', () =>{
+                this.getTarget(element);
+                console.log(element);
+            });
 
-        this.articleButton.addEventListener('click', () => {
-            this.getTarget(this.articleButton);
         });
     }
 
