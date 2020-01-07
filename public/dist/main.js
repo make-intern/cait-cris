@@ -225,8 +225,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
 
 
- //CAIT
- //CAIT
+ //CAIT - search results page
+ //CAIT -  sample js
 
 var App = function () {
   function App() {
@@ -261,8 +261,8 @@ app.component(new __WEBPACK_IMPORTED_MODULE_2__components_search__["a" /* search
 app.component(new __WEBPACK_IMPORTED_MODULE_4__components_gallerySlider__["a" /* gallerySlider */]());
 app.component(new __WEBPACK_IMPORTED_MODULE_5__components_navigator__["a" /* navigator */]());
 
-app.component(new __WEBPACK_IMPORTED_MODULE_6__components_searchresults__["a" /* searchresults */]()); //CAIT
-app.component(new __WEBPACK_IMPORTED_MODULE_7__components_sample_ex__["a" /* alertdata */]()); //CAIT
+app.component(new __WEBPACK_IMPORTED_MODULE_6__components_searchresults__["a" /* searchresults */]()); //CAIT - search results page
+app.component(new __WEBPACK_IMPORTED_MODULE_7__components_sample_ex__["a" /* alertdata */]()); //CAIT-  sample js
 
 document.addEventListener("DOMContentLoaded", function () {
   return app.boot();

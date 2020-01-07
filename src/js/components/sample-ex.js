@@ -21,7 +21,6 @@ export class alertdata {
             element.addEventListener('click', () =>{
                 this.getTarget(element);
             });
-
         });
     }
 
