@@ -7,6 +7,7 @@ import { gallerySlider } from './components/gallerySlider';
 import { navigator } from './components/navigator';
 
 import { searchresults } from './components/searchresults'; //CAIT
+import { navcontent } from './components/navcontent';//CAIT
 
 class App {
   constructor() {
@@ -32,6 +33,7 @@ app.component(new gallerySlider());
 app.component(new navigator());
 
 app.component(new searchresults()); //CAIT
+app.component(new navcontent()); //CAIT
 
 document.addEventListener("DOMContentLoaded", () => app.boot());
 

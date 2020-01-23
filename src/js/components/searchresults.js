@@ -1,46 +1,50 @@
 export class searchresults {
     constructor() {
-        this.propertyResults = null;
-        this.articleResults = null;
-        this.propertyButton = null;
-        this.articleButton = null;
+        this.tabResults = null;
+        this.tabLink = null;
+        this.searchResults = null;
     }
 
-    getElements(){
-        this.propertyResults = document.getElementById("p-results");
-        this.articleResults = document.getElementById("a-results");
-        this.propertyButton = document.getElementById('p-link');
-        this.articleButton = document.getElementById('a-link');
+    getElements(){ 
+        this.tabResults = Array.from(document.querySelectorAll('.js-tab-results'));
+        this.tabLink = Array.from(document.querySelectorAll('.js-tab-link'));
+        this.searchResults = document.getElementById('js-search-results');
+    }
+
+    getTarget(element){
+        let activeTab = element.dataset.target;
+        this.setActiveTarget(activeTab, element);
+    }
+
+    resetActive(tabs){
+        tabs.forEach((element) => {
+            element.classList.remove('is-active');
+            
+        });
+    }
+
+    setActiveTarget(target, targetTab) {
+        let elementType = this.searchResults.querySelector("[data-targetEL='" + target + "' ]");
+
+        this.resetActive(this.tabResults);
+        this.resetActive(this.tabLink);
+
+        elementType.classList.add("is-active");
+        targetTab.classList.add("is-active");
+    }
+
+    bindElements() {
+        this.tabLink.forEach((element) => {
+            element.addEventListener('click', () =>{
+                this.getTarget(element);
+                console.log(element);
+            });
+
+        });
+    }
+
+    init() {
+        this.getElements();
+        this.bindElements();
     }
 }
-
-/*document.addEventListener("DOMContentLoaded", function(){
-    const propertyResults = document.getElementById("p-results");
-    const articleResults = document.getElementById("a-results");
-    const propertyButton = document.getElementById('p-link');
-    const articleButton = document.getElementById('a-link');
-
-        function setActiveState(targetElement) {
-            if(targetElement == 'property') {
-                propertyResults.classList.add('is-active');
-                articleResults.classList.remove("is-active");
-                propertyButton.classList.add('is-active-tab');
-                articleButton.classList.remove('is-active-tab');
-            } else {
-                propertyResults.classList.remove('is-active');
-                articleResults.classList.add("is-active");
-                propertyButton.classList.remove('is-active-tab');
-                articleButton.classList.add('is-active-tab');
-            }
-        }
- 
-            propertyButton.addEventListener('click', function() { 
-                let target = propertyButton.dataset.target;     
-                setActiveState(target);
-            });
-
-            articleButton.addEventListener('click', function() {
-                setActiveState();
-            });
-
-});*/
