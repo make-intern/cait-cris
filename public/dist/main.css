@@ -4435,17 +4435,6 @@ footer > div:last-child a {
   display: flex;
 }
 
-a {
-  color: #F9F7EE;
-  opacity: 0.9;
-  font-size: 12px;
-  letter-spacing: 1.25px;
-}
-
-a:hover {
-  opacity: 1;
-}
-
 .c-navbar {
   width: 100%;
   min-height: 48px;
@@ -4479,7 +4468,14 @@ a:hover {
 }
 
 .c-navbar__nav-links div a {
+  color: #F9F7EE;
+  opacity: 0.9;
   font-size: 18px;
+  letter-spacing: 1.25px;
+}
+
+.c-navbar__nav-links div a:hover {
+  opacity: 1;
 }
 
 .c-navbar__nav-links ul {
@@ -4541,6 +4537,17 @@ a:hover {
   background: #3a4b41;
   padding: 30px 16px;
   color: #fff;
+}
+
+.c-navcontent a {
+  color: #F9F7EE;
+  opacity: 0.9;
+  font-size: 12px;
+  letter-spacing: 1.25px;
+}
+
+.c-navcontent a:hover {
+  opacity: 1;
 }
 
 @media (min-width: 924px) {
